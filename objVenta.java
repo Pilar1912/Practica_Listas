@@ -4,7 +4,7 @@ public class objVenta {
     private String NombreVendedor;
     private Double TotalVenta;
     private int CantidadProductos;
-    private int EstadoVenta; //Registrada 1 o Cancelada 0.
+    private int EstadoVenta; //Registrada 1 o Cancelada 0 o Eliminado 2
 
 
     public objVenta(int numeroFactura, String nombreCliente, String nombreVendedor, Double totalVenta,

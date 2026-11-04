@@ -1,0 +1,7 @@
+Número Factura: 1
+Nombre Cliente: yo
+Nombre Vendedor: tu
+Total Venta: 19000.0
+Cantidad de productos: 2
+Estado de la vena: 1
+------------------------------------------------------ 

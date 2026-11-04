@@ -1,0 +1,7 @@
+Número Factura: 1
+Nombre Cliente: pilar
+Nombre Vendedor: camila
+Total Venta: 120000.0
+Cantidad Productos: 3
+Estado Venta: 1
+------------------------------------------------------ 

@@ -1,14 +1,18 @@
 import java.util.Scanner;
+import java.util.LinkedList;
 
 public class menu {
     public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     utilidades u = new utilidades();
+    Importar i = new Importar();
+    LinkedList<objVenta> l = new LinkedList<>();
+    l = i.ImportarArchivo();
     boolean seguir = true;
     while(seguir){
         switch (u.menu(sc)) {
             case 1:
-                System.out.println("Página en mantenimiento.");
+                l = u.LLenarLista(l, sc);
                 break;
             case 2:
                 System.out.println("Página en mantenimiento.");

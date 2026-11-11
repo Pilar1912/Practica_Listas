@@ -1,0 +1,18 @@
+[
+  {
+    "NumeroFactura": 1,
+    "NombreCliente": "PILAR",
+    "NombreVendedor": "SALOME",
+    "TotalVenta": 154000.0,
+    "CantidadProductos": 4,
+    "EstadoVenta": 1
+  },
+  {
+    "NumeroFactura": 2,
+    "NombreCliente": "sara",
+    "NombreVendedor": "daniel",
+    "TotalVenta": 8000000.0,
+    "CantidadProductos": 5,
+    "EstadoVenta": 1
+  }
+]

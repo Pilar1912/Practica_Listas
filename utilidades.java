@@ -3,8 +3,10 @@ import java.util.Scanner;
 
 public class utilidades {
     validaciones v = new validaciones();
-    public int menu(Scanner sc){
-        System.out.println("Bienvenido al sistema de ventas");
+    exportarJSON e = new exportarJSON();
+
+    public int menu(Scanner sc) {
+        System.out.println("Bienvenido a la tienda de estructuras noche");
         System.out.println("¿Qué desea realizar?");
         System.out.println("1. Registrar una venta");
         System.out.println("2. Mostrar las ventas");
@@ -14,54 +16,58 @@ public class utilidades {
         System.out.println("6. Eliminar una venta");
         System.out.println("7. Generar un informe");
         System.out.println("8. Salir");
-        int num =v.ValidarEntero(sc);
-
+        int num = v.ValidarEntero(sc);
         return num;
+
     }
 
-    public LinkedList<objVenta> LlenaLista(LinkedList<objVenta> l){
-        boolean pedir = true;
-        while(pedir){
+    public LinkedList<objVenta> LLenaLista(LinkedList<objVenta> l, Scanner sc) {
 
-        }
+        objVenta o = new objVenta(NumeroFactura(l), PedirNombre(sc, 1), PedirNombre(sc, 2), TotalVenta(sc, v),
+                DatosEnteros(sc, 1), 1);
+        l.add(o);
+        e.ExportarJson(l);
+        exportarJSON ej = new exportarJSON();
+        ej.ExportarJson(l);
 
         return l;
+
     }
 
-    public static int NumeroFactura(LinkedList<objVenta> l){
-        int ultimaFactura =  l.size();
-        return ultimaFactura++;
+    public static int NumeroFactura(LinkedList<objVenta> l) {
+        return l.size() + 1;
     }
 
-    public String PedirNombre(Scanner sc, int opt){
+    public String PedirNombre(Scanner sc, int opt) {
         switch (opt) {
             case 1:
-                System.out.println("Ingrese el nombre del cliente:");
+                System.out.println("Ingres el nombre del cliente");
                 break;
-        
+
             default:
-                System.out.println("Ingrese el nombre del vendedor:");
+                System.out.println("Ingrese el nombre del vendedor");
                 break;
         }
         return sc.next();
+
     }
 
-    public static Double TotalVenta(Scanner sc, validaciones v){
-        System.out.println("Ingrese el total de la venta:");
+    public static Double TotalVenta(Scanner sc, validaciones v) {
+        System.out.println("Ingrese el total de la venta");
         return v.ValidarDecimal(sc);
     }
 
-    public String DatosEnteros(Scanner sc, int opt){
+    public int DatosEnteros(Scanner sc, int opt) {
         switch (opt) {
             case 1:
-                System.out.println("Ingrese la cantidad de productos de la venta:");
+                System.out.println("Ingrese la cantidad de productos");
                 break;
-        
+
             default:
-                System.out.println("Ingrese el estado de la venta 0).Cancelada 1).Registrada 2).Eliminada:");
+                System.out.println("Ingrese el estado de la venta 1: registrado 0: cancelado 3: eliminado");
                 break;
         }
-        return sc.next();
+        return v.ValidarEntero(sc);
+
     }
-    
 }
